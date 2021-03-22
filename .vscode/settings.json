@@ -1,0 +1,24 @@
+{
+    "terminal.integrated.cwd": "grablorweb",
+    "files.watcherExclude": {
+        "OLD": true
+    },
+    "search.exclude": {
+        "OLD": true
+    },
+    "intelephense.files.exclude": [
+        "**/.git/**",
+        "**/.svn/**",
+        "**/.hg/**",
+        "**/CVS/**",
+        "**/.DS_Store/**",
+        "**/node_modules/**",
+        "**/bower_components/**",
+        "**/vendor/**/{Tests,tests}/**",
+        "**/.history/**",
+        "**/vendor/**/vendor/**",
+        "OLD",
+        "grabliyw_grablordb.sql"
+    ],
+    "search.searchEditor.reusePriorSearchConfiguration": true
+}

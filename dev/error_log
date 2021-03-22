@@ -1,0 +1,2 @@
+[18-Mar-2021 03:04:41 America/New_York] PHP Notice:  Undefined index: nextPageToken in /home/grabliyw/public_html/appio.studio/dev/functions.php on line 20
+[18-Mar-2021 03:04:48 America/New_York] PHP Notice:  Undefined variable: npt in /home/grabliyw/public_html/appio.studio/dev/functions.php on line 60

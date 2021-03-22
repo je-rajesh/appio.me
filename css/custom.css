@@ -1,0 +1,15 @@
+.tools{
+  margin: 0.5rem;
+  color:navy;
+  width: 1rem;
+}
+.tools:hover{
+  color: red;
+}
+.createbtn{
+  margin: 1rem;
+}
+
+.add{
+  margin: 0.5rem;
+}
