@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use App\Models\Profile;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Validation\Rule;
 use Ixudra\Curl\Facades\Curl;
 
 class CreateappController extends Controller
@@ -50,15 +51,23 @@ class CreateappController extends Controller
      */
     public function store(Request $request)
     {
-        $response = Http::withHeaders([])->post('https://api.startapp.com/pub/app?partner=106903375&token=092a7a03c9cf7d33e5d8fc594d859640', [
-            "notPublished" => true,
-            "title" => $request->input('appname'),
-            "platform" => "android",
-            "categoryCode" => "A33",
-            "maturityCode" => "0",
-        ])->json();
 
-        $startappid = $response['data'][0]['appId'];
+        $validated = $request->validate([
+            'icon' => ['file', 'image','required', Rule::dimensions()->maxHeight(512)->maxWidth(512)->minHeight(100)->minWidth(100), 'max:800', 'min:20'],
+            'color' => include('regex.php'),
+
+
+        ]);
+
+        // $response = Http::withHeaders([])->post('https://api.startapp.com/pub/app?partner=106903375&token=092a7a03c9cf7d33e5d8fc594d859640', [
+        //     "notPublished" => true,
+        //     "title" => $request->input('appname'),
+        //     "platform" => "android",
+        //     "categoryCode" => "A33",
+        //     "maturityCode" => "0",
+        // ])->json();
+
+        // $startappid = $response['data'][0]['appId'];
 
         $a = $request->input('appname');
         $i = auth()->user()->id;
